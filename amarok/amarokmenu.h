@@ -22,11 +22,9 @@ class Menu : public KPopupMenu
 Q_OBJECT
 
 public:
-    static const int ID_CONF_DECODER      = 103;
-    static const int ID_SHOW_VIS_SELECTOR = 104;
+    enum MenuIds { ID_CONF_DECODER, ID_SHOW_VIS_SELECTOR, ID_SHOW_SCRIPT_SELECTOR }; 
 
     Menu( QWidget *parent );
-
     static KPopupMenu *helpMenu( QWidget *parent = 0 );
 
 private slots:

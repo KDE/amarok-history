@@ -15,8 +15,6 @@ email                : markey@web.de
  *                                                                         *
  ***************************************************************************/
 
-#include <assert.h>
-
 #include "amarokconfig.h"
 #include "amarokconfigdialog.h"
 #include "amarokdcophandler.h"
@@ -104,14 +102,13 @@ PlayerApp::PlayerApp()
     EngineController::instance()->attach( this );
     m_pTray = new amaroK::TrayIcon( m_pPlayerWidget, actionCollection() ); //shown/hidden in applySettings()
 
-    // <KJSEmbed>
-        KJSEmbedPart* js = new KJSEmbedPart( this );
-        js->addObject( this );
-        js->addObject( m_pBrowserWin );
-        js->addObject( m_pPlayerWidget );
-        JSConsoleWidget* console = js->view();
-        console->show();
-    // </KJSEmbed>
+    //KJSEmbed
+    m_kjs = new KJSEmbedPart( this );
+    m_kjs->addObject( this );
+    m_kjs->addObject( m_pBrowserWin );
+    m_kjs->addObject( m_pPlayerWidget );
+    JSConsoleWidget* console = m_kjs->view();
+    console->show();
     
     applySettings();  //will load the engine
 

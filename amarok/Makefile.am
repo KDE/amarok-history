@@ -62,6 +62,8 @@ amarokapp_SOURCES = \
     playlisttooltip.cpp \
     playlistwidget.cpp \
     pluginmanager.cpp \
+    scriptmanager.cpp \
+    scriptmanagerbase.ui \
     searchbrowser.cpp \
     socketserver.cpp \
     statusbar.cpp \

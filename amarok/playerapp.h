@@ -30,8 +30,7 @@
 #define APP_VERSION "1.1-CVS"
 
 
-namespace amaroK
-{
+namespace amaroK {
     class OSD;
     class TrayIcon;
     class DcopHandler;
@@ -48,7 +47,10 @@ class QEvent;
 class KActionCollection;
 class KGlobalAccel;
 
-
+namespace KJSEmbed {
+    class KJSEmbedPart;
+}
+    
 class PlayerApp : public KApplication, public EngineObserver
 {
     Q_OBJECT
@@ -70,7 +72,8 @@ class PlayerApp : public KApplication, public EngineObserver
 
         // ATTRIBUTES
         KActionCollection *m_pActionCollection;
-
+        KJSEmbed::KJSEmbedPart* m_kjs;
+        
         // STATICS
         static const int SCOPE_SIZE = 9; //NOTE 512
 

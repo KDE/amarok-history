@@ -4,9 +4,9 @@
 #include "amarokconfig.h"
 #include "amarokmenu.h"
 #include "enginecontroller.h"
-#include "playerapp.h"    //actionCollection() and a SLOT
-#include "socketserver.h" //Vis::Selector::showInstance()
-
+#include "playerapp.h"        //actionCollection() and a SLOT
+#include "scriptmanager.h"
+#include "socketserver.h"     //Vis::Selector::showInstance()
 
 #include <kaction.h>
 #include <kapplication.h>
@@ -49,6 +49,7 @@ Menu::Menu( QWidget *parent )
     insertSeparator();
 
     insertItem( i18n( "&Visualizations..." ), ID_SHOW_VIS_SELECTOR );
+    insertItem( i18n( "&Scripts..." ), ID_SHOW_SCRIPT_SELECTOR );
 
     insertSeparator();
 
@@ -99,6 +100,11 @@ Menu::slotActivated( int index )
         break;
     case ID_SHOW_VIS_SELECTOR:
         Vis::Selector::instance()->show(); //doing it here means we delay creation of the widget
+        break;
+    case ID_SHOW_SCRIPT_SELECTOR:
+        QStringList list;
+        ScriptManager* sm = new ScriptManager( list );
+        sm->show();
         break;
     }
 }
