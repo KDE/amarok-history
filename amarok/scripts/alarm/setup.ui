@@ -1,0 +1,54 @@
+<!DOCTYPE UI><UI version="3.1" stdsetdef="1">
+<class>Form1</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>Form1</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>405</width>
+            <height>248</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Form1</string>
+    </property>
+    <vbox>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QGroupBox">
+            <property name="name">
+                <cstring>groupBox1</cstring>
+            </property>
+            <property name="title">
+                <string>groupBox1</string>
+            </property>
+            <vbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>pushButton1</cstring>
+                    </property>
+                    <property name="text">
+                        <string>pushButton1</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>pushButton2</cstring>
+                    </property>
+                    <property name="text">
+                        <string>pushButton2</string>
+                    </property>
+                </widget>
+            </vbox>
+        </widget>
+    </vbox>
+</widget>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>
