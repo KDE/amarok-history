@@ -4,6 +4,7 @@ amaroK ChangeLog
 
 
 VERSION 1.0.1:
+  FIX: Short dropouts after starting a stream with GStreamer.
   FIX: amaroK starting invisible when systray icon is disabled.
   ADD: Icon for "Menu" button in toolbar. Improves Usability.
   FIX: Playlist analyzer looks freaky on some systems. (BR 83671)

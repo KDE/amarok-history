@@ -44,7 +44,7 @@ static const int
 SCOPEBUF_SIZE = 40000;
 
 static const int
-STREAMBUF_SIZE = 200000;
+STREAMBUF_SIZE = 400000;
 
 GError*
 GstEngine::error_msg;
