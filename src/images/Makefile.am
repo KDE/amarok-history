@@ -1,0 +1,37 @@
+imagesdir = \
+    $(kde_datadir)/amarok/images
+
+images_DATA = \
+    amarok_cut.png \
+    amarok_rocks.jpg \
+    b_next.png \
+    b_pause.png \
+    b_play.png \
+    b_prev.png \
+    b_stop.png \
+    bucky.png \
+    context_gradient.png \
+    covermanager.png \
+    currenttrack_play.png \
+    description.png \
+    eq_active2.png \
+    eq_inactive2.png \
+    folder_crystal.png \
+    loading1.png \
+    loading2.png \
+    logo_splash.png \
+    logo_web.png \
+    musicbrainz.png \
+    nocover.png \
+    pl_active2.png \
+    pl_inactive2.png \
+    time_minus.png \
+    time_plus.png \
+    vol_speaker.png \
+    wizard_compact.png \
+    wizard_xmms.png
+
+KDE_ICON = \
+    AUTO
+
+

@@ -1,0 +1,75 @@
+amarok (1.0.2-1) unstable; urgency=low
+
+  * New upstream version.
+
+ -- Peter Rockai (mornfall) <mornfall@danill.sk>  Thu,  5 Aug 2004 14:23:23 +0200
+
+amarok (1.0.1-1) unstable; urgency=low
+
+  * New upstream version
+  * Make depends among amarok packages versioned
+  * Prepare to upload into Debian, closes: #236696
+  * Add manpage for amarok by Alejandro Exojo
+
+ -- Peter Rockai (mornfall) <mornfall@danill.sk>  Wed, 30 Jun 2004 23:24:16 +0200
+
+amarok (1.0.0-3) unstable; urgency=low
+
+  * Dynamically link against libsqlite0
+  * Fix gstreamer dependencies
+  * Various small fixes (sections, descriptions, doc dirs)
+  * Thanks go to Adeodato Simó for help with various issues
+
+ -- Peter Rockai (mornfall) <mornfall@danill.sk>  Sat, 26 Jun 2004 23:06:00 +0200
+
+amarok (1.0.0-2) unstable; urgency=low
+
+  * Make the depends on amarok-gstreamer a bit more tight. Only depend on
+    audiosink, recommend the decoder plugins.
+  * Make the amarok engines depend on amarok itself.
+  * Compile with xmms visualisation support.
+
+ -- Peter Rockai (mornfall) <mornfall@danill.sk>  Wed, 23 Jun 2004 13:58:12 +0200
+
+amarok (1.0.0-1) unstable; urgency=low
+
+  * Build official 1.0.0 release.
+
+ -- Peter Rockai (mornfall) <mornfall@danill.sk>  Wed, 16 Jun 2004 23:48:52 +0200
+
+amarok (1.0-pre1-2) unstable; urgency=low
+
+  * Fix amarok-arts package, was missing mcop files. Duh.
+
+ -- Peter Rockai (mornfall) <mornfall@danill.sk>  Wed, 16 Jun 2004 23:25:29 +0200
+
+amarok (1.0-pre1-1) unstable; urgency=low
+
+  * First 1.0.0 prerelease.
+
+ -- Peter Rockai (mornfall) <mornfall@danill.sk>  Wed, 16 Jun 2004 10:18:31 +0200
+
+amarok (1.0-beta4-2) unstable; urgency=low
+
+  * Patch to final beta4 version.
+
+ -- Peter Rockai (mornfall) <mornfall@danill.sk>  Tue,  1 Jun 2004 17:47:53 +0200
+
+amarok (1.0-beta4-1) unstable; urgency=low
+
+  * New upstream RC (beta4-rc1).
+  * Build with GST support.
+
+ -- Peter Rockai (mornfall) <mornfall@danill.sk>  Tue,  1 Jun 2004 10:24:09 +0200
+
+amarok (1.0-beta3-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Peter Rockai (mornfall) <mornfall@danill.sk>  Sat, 29 May 2004 17:08:55 +0200
+
+amarok (1.0-beta1-0) workstation-unstable; urgency=low
+
+  * Initial packaging
+
+ -- Peter Rockai (mornfall) <mornfall@mornfall.homeip.net>  Sun, 11 Apr 2004  17:05:00 +0200

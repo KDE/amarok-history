@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE kcfg SYSTEM "http://www.kde.org/standards/kcfg/1.0/kcfg.dtd">
+<!-- Author: Mark Kretschmann, markey@web.de -->
+<kcfg>
+
+    <kcfgfile name="amarokrc"/>
+
+    <group name="Gst-Engine">
+        <entry key="Sound Output" type="String">
+            <label>Sound output method to use</label>
+            <default>osssink</default>
+            <whatsthis>Select the sound output plugin ("sink"). Their availability depends on the system configuration.</whatsthis>
+        </entry>
+        <entry key="Use Custom Sound Device" type="Bool">
+            <label>Don't use the autodetected audiosink sound device</label>
+            <default>false</default>
+            <whatsthis>When enabled, uses user-specified sound device for audiosink.</whatsthis>
+        </entry>
+        <entry key="Sound Device" type="String">
+            <label>Sound output device to use</label>
+            <whatsthis>Select the sound output device. this is useful for gstreamer engine sinks</whatsthis>
+        </entry>
+        <entry key="Use Custom Output Params" type="Bool">
+            <label>Use custom parameters for output sink.</label>
+            <default>false</default>
+        </entry>
+        <entry key="Output Params" type="String">
+            <label>The custom sink parameters.</label>
+        </entry>
+        <entry key="Thread Priority" type="Int">
+            <label>Priority of GStreamer pipeline thread</label>
+            <default>2</default>
+            <min>0</min>
+            <max>3</max>
+            <whatsthis>The priority of the thread for GStreamer, a value between 0 (low) and 3 (high).</whatsthis>
+        </entry>
+        <entry key="Fadein Duration" type="Int">
+            <label>Duration of Fade-in when starting a track</label>
+            <default>2000</default>
+            <min>0</min>
+            <max>10000</max>
+        </entry>
+        <entry key="Fadeout Duration" type="Int">
+            <label>Duration of Fade-out at trackend</label>
+            <default>2000</default>
+            <min>0</min>
+            <max>10000</max>
+        </entry>
+    </group>
+
+</kcfg>
+
