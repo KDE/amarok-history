@@ -3,22 +3,36 @@
 // See COPYING file for licensing information.
 
 
-ScriptManager.connect( ScriptManager, 'configure(const QString&)', this, 'slotConfigure' );
+ScriptManager.connect( ScriptManager, "stop(const QString&)", this, "slotStop" );
+ScriptManager.connect( ScriptManager, "configure(const QString&)", this, "slotConfigure" );
 
+var dcop = amarok.child( "DcopHandler" );
 // Load the demo gui
-var gui = Factory.loadui( '/home/mark/mysource/kdecvs/amarok_1_1_branch/kdeextragear-1/amarok/amarok/scripts/alarm/setup.ui' );
+var gui = Factory.loadui( "setup.ui" );
 
-var widget = new QWidget();
-widget.show();
+ScriptManager.connect( gui.child( "pushButton2" ), "clicked()", this, "slotPlay" );
 
-// application.exec();
 
 ////////////////////////////////////////////////////////////////////////////////
-//
+// functions
 ////////////////////////////////////////////////////////////////////////////////
 
-this.slotConfigure = function( name )
+function slotStop( name )
+{
+    print( "slotStop()\n" );
+}
+
+
+function slotConfigure( name )
 {
     print( "slotConfigure()\n" );
     gui.show();
 }
+
+
+function slotPlay( name )
+{
+    print( "slotPlay()\n" );
+    dcop.play();
+}
+

@@ -17,10 +17,16 @@
 // public interface
 ////////////////////////////////////////////////////////////////////////////////
 
+ScriptManager::Selector* ScriptManager::Selector::instance = 0;
+
+
 ScriptManager::Selector::Selector( const QStringList &directories, QWidget *parent, const char *name )
         : KDialogBase( parent, name, true, i18n( "Script List" ), Ok | Cancel, Ok, true )
         , m_dirList( directories )
 {
+    setWFlags( Qt::WDestructiveClose );
+    setModal( false );
+    
     m_base = new ScriptManagerBase( this );
     setMainWidget( m_base );
     m_base->directoryListView->setFullWidth( true );
@@ -50,7 +56,9 @@ ScriptManager::Selector::Selector( const QStringList &directories, QWidget *pare
 
 
 ScriptManager::Selector::~Selector()
-{}
+{
+    instance = 0;
+}
 
 
 ScriptManager::Selector::Result

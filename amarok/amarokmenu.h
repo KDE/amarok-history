@@ -22,7 +22,7 @@ class Menu : public KPopupMenu
 Q_OBJECT
 
 public:
-    enum MenuIds { ID_CONF_DECODER, ID_SHOW_VIS_SELECTOR, ID_SHOW_SCRIPT_SELECTOR }; 
+    enum MenuIds { ID_CONF_DECODER, ID_SHOW_VIS_SELECTOR, ID_SHOW_SCRIPT_SELECTOR, ID_SHOW_SCRIPT_CONSOLE }; 
 
     Menu( QWidget *parent );
     static KPopupMenu *helpMenu( QWidget *parent = 0 );

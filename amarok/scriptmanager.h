@@ -22,6 +22,7 @@ namespace ScriptManager
             Q_OBJECT
 
         signals:
+            void stop( const QString& );    
             void configure( const QString& );    
             
         public:
@@ -29,6 +30,7 @@ namespace ScriptManager
             ~Manager();
 
             static void showSelector();
+            static void showConsole();
             void addObject( QObject* object );
             
         private slots:

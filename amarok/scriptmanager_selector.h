@@ -25,11 +25,11 @@ namespace ScriptManager
                 DialogCode status;
             };
 
-            static Selector* instance();
-            
             Selector( const QStringList& directories, QWidget *parent = 0, const char *name = 0 );
             virtual ~Selector();
 
+            static Selector* instance;
+            
         public slots:
             Result exec();
 

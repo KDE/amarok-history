@@ -49,7 +49,11 @@ Menu::Menu( QWidget *parent )
     insertSeparator();
 
     insertItem( i18n( "&Visualizations..." ), ID_SHOW_VIS_SELECTOR );
+    
+    insertSeparator();
+    
     insertItem( i18n( "&Scripts..." ), ID_SHOW_SCRIPT_SELECTOR );
+    insertItem( i18n( "&JavaScript Console" ), ID_SHOW_SCRIPT_CONSOLE );
 
     insertSeparator();
 
@@ -103,6 +107,9 @@ Menu::slotActivated( int index )
         break;
     case ID_SHOW_SCRIPT_SELECTOR:
         ScriptManager::Manager::showSelector();
+        break;
+    case ID_SHOW_SCRIPT_CONSOLE:
+        ScriptManager::Manager::showConsole();
         break;
     }
 }

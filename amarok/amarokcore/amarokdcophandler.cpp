@@ -30,6 +30,7 @@ DcopHandler::DcopHandler()
    : DCOPObject( "player" )
    , m_nowPlaying( QString::null )
 {
+   setName( "DcopHandler" );
    // Register with DCOP
    if ( !kapp->dcopClient()->isRegistered() )
    {
