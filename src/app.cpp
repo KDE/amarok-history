@@ -395,8 +395,7 @@ void App::applySettings( bool firstTime )
 
     setupColors();
 
-
-    if( firstTime && !amaroK::config()->readBoolEntry( "HiddenOnExit", false ) )
+    if( firstTime && (!amaroK::config()->readBoolEntry( "HiddenOnExit", false ) || !AmarokConfig::showTrayIcon()) )
     {
         mainWindow()->show();
 
