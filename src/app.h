@@ -27,7 +27,7 @@
 #include <kurl.h>                  //needed for KURL::List (nested)
 #include <qserversocket.h>         //baseclass
 
-#define APP_VERSION "1.0-CVS"
+#define APP_VERSION "1.1-CVS"
 
 
 namespace amaroK
@@ -37,6 +37,9 @@ namespace amaroK
     class DcopHandler;
         
     static const int VOLUME_MAX = 100;
+}
+namespace ScriptManager {
+    class Manager;
 }
 
 class PlaylistWindow;
@@ -72,6 +75,7 @@ class App : public KApplication, public EngineObserver
 
         // ATTRIBUTES
         KActionCollection *m_pActionCollection;
+        ScriptManager::Manager* m_scripter;
 
         // STATICS
         static const int SCOPE_SIZE = 9; //NOTE 512

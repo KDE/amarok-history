@@ -25,8 +25,12 @@ namespace amaroK
             Q_OBJECT
 
         public:
-            static const int ID_CONF_DECODER = 103;
-            static const int ID_SHOW_VIS_SELECTOR = 104;
+            enum MenuIds {
+                ID_CONF_DECODER,
+                ID_SHOW_VIS_SELECTOR,
+                ID_SHOW_SCRIPT_SELECTOR,
+                ID_SHOW_SCRIPT_CONSOLE
+            };
 
             Menu( QWidget *parent );
 
@@ -69,7 +73,7 @@ namespace amaroK
     class VolumeAction : public KAction, public EngineObserver
     {
             Q_OBJECT
-        
+
         public:
             VolumeAction( KActionCollection* );
             virtual int plug( QWidget *, int index = -1 );

@@ -29,6 +29,7 @@ email                : markey@web.de
 #include "playlistwindow.h"
 #include "plugin.h"
 #include "pluginmanager.h"
+#include "scriptmanager.h"
 #include "socketserver.h"
 #include "systray.h"
 #include "threadweaver.h"        //restoreSession()
@@ -83,6 +84,10 @@ App::App()
 
     QPixmap::setDefaultOptimization( QPixmap::MemoryOptim );
 
+    m_scripter = new ScriptManager::Manager( this );
+    m_scripter->addObject( this );
+    m_scripter->addObject( m_pDcopHandler );
+    
     m_pPlaylistWindow = new PlaylistWindow(); //creates the actionCollection()
     m_pPlaylist       = m_pPlaylistWindow->playlist();
     m_pTray           = new amaroK::TrayIcon( m_pPlaylistWindow, actionCollection() ); //shown state will be adjusted in applySettings()
