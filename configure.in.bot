@@ -123,6 +123,10 @@ if test x$no_amarok != xyes; then
         echo "==== amaroK will be built with the GStreamer-engine                         ===="
     fi
     
+    if test x$build_xine = xyes; then
+        echo "================================================================================"
+        echo "==== amaroK will be built with the xine-engine                              ===="
+    fi 
     if test x$build_nmm = xyes; then
         echo "================================================================================"
         echo "==== amaroK will be built with the NMM-engine                               ===="
