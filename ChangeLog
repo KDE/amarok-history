@@ -4,6 +4,7 @@ amaroK ChangeLog
 
 
 VERSION 1.0.2:
+  ADD: xine-engine, configure --with-xine to use
   FIX: aRts-engine: Compatibility with newer aRts versions improved.
   FIX: aRts-engine: Streams sometimes stopping shortly after playback was
        started. (BR 84417)

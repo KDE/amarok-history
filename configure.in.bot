@@ -24,6 +24,16 @@ if test x$amarok_error_taglibold = xyes; then
     echo "=                                                                           ===="
 fi
 
+if test x$amarok_warning_xineold = xyes; then
+    echo " ==============================================================================="
+    echo " ===  amaroK - WARNING  ========================================================"
+    echo " ==============================================================================="
+    echo " ="
+    echo " = amaroK requires xine-lib version: 1.0-rc4"
+    echo " = amaroK will still be built, but you must use another sound-engine."
+    echo " ="
+fi
+
 if test x$PKGCONFIGFOUND != xyes; then
     echo "================================================================================"
     echo "=  amaroK - WARNING  ==========================================================="
