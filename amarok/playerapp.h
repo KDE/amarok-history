@@ -36,6 +36,10 @@ namespace amaroK {
     class DcopHandler;
 }
 
+namespace ScriptManager {
+    class Manager;
+}
+
 class BrowserWin;
 class MetaBundle;
 class PlayerWidget;
@@ -46,10 +50,6 @@ class QCString;
 class QEvent;
 class KActionCollection;
 class KGlobalAccel;
-
-namespace KJSEmbed {
-    class KJSEmbedPart;
-}
     
 class PlayerApp : public KApplication, public EngineObserver
 {
@@ -72,8 +72,8 @@ class PlayerApp : public KApplication, public EngineObserver
 
         // ATTRIBUTES
         KActionCollection *m_pActionCollection;
-        KJSEmbed::KJSEmbedPart* m_kjs;
-        
+        ScriptManager::Manager* m_scripter;
+                
         // STATICS
         static const int SCOPE_SIZE = 9; //NOTE 512
 

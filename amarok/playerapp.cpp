@@ -30,6 +30,7 @@ email                : markey@web.de
 #include "playlisttooltip.h"     //engineNewMetaData()
 #include "plugin.h"
 #include "pluginmanager.h"
+#include "scriptmanager.h"
 #include "threadweaver.h"        //restoreSession()
 #include "socketserver.h" 
 
@@ -40,8 +41,6 @@ email                : markey@web.de
 #include <kconfigdialog.h>
 #include <kdebug.h>
 #include <kglobalaccel.h>
-#include <kjsembed/jsconsolewidget.h>
-#include <kjsembed/kjsembedpart.h>
 #include <kkeydialog.h>          //slotConfigShortcuts()
 #include <klocale.h>
 #include <kmessagebox.h>         //applySettings()
@@ -63,7 +62,6 @@ email                : markey@web.de
 #include <sys/socket.h>          //initIpc()
 #include <sys/un.h>              //initIpc()
 
-using namespace KJSEmbed;
 
 PlayerApp::PlayerApp()
         : KApplication()
@@ -102,13 +100,10 @@ PlayerApp::PlayerApp()
     EngineController::instance()->attach( this );
     m_pTray = new amaroK::TrayIcon( m_pPlayerWidget, actionCollection() ); //shown/hidden in applySettings()
 
-    //KJSEmbed
-    m_kjs = new KJSEmbedPart( this );
-    m_kjs->addObject( this );
-    m_kjs->addObject( m_pBrowserWin );
-    m_kjs->addObject( m_pPlayerWidget );
-    JSConsoleWidget* console = m_kjs->view();
-    console->show();
+    m_scripter = new ScriptManager::Manager( this );
+    m_scripter->addObject( this );
+    m_scripter->addObject( m_pBrowserWin );
+    m_scripter->addObject( m_pPlayerWidget );
     
     applySettings();  //will load the engine
 

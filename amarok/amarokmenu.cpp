@@ -102,9 +102,7 @@ Menu::slotActivated( int index )
         Vis::Selector::instance()->show(); //doing it here means we delay creation of the widget
         break;
     case ID_SHOW_SCRIPT_SELECTOR:
-        QStringList list;
-        ScriptManager* sm = new ScriptManager( list );
-        sm->show();
+        ScriptManager::Manager::showSelector();
         break;
     }
 }

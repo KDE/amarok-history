@@ -1,45 +1,43 @@
-// (c) 2003 Scott Wheeler <wheeler@kde.org>,
 // (c) 2004 Mark Kretschmann <markey@web.de>
 // See COPYING file for licensing information.
 
 #ifndef AMAROK_SCRIPTMANAGER_H
 #define AMAROK_SCRIPTMANAGER_H
 
-#include <kdialogbase.h>    //baseclass
+#include "scriptmanager_selector.h"
 
+#include <qguardedptr.h>
+#include <qobject.h>        //baseclass
+#include <qstringlist.h>    //stack allocated
 
-class ScriptManagerBase;
+namespace KJSEmbed
+{
+    class KJSEmbedPart;
+}
 
-class ScriptManager : public KDialogBase {
-        Q_OBJECT
+namespace ScriptManager
+{
+    
+    class Manager : public QObject
+    {
+            Q_OBJECT
 
-    public:
-        struct Result {
-            QStringList dirs;
-            QStringList addedDirs;
-            QStringList removedDirs;
-            DialogCode status;
-        };
+        public:
+            Manager( QObject* );
+            ~ Manager();
 
-        ScriptManager( const QStringList &directories, QWidget *parent = 0, const char *name = 0 );
-        virtual ~ScriptManager();
+            static void showSelector();
+            void addObject( QObject* object );
 
-    public slots:
-        Result exec();
+        private:
+            static Manager* self;
 
-    signals:
-        void signalDirectoryAdded( const QString &directory );
-        void signalDirectoryRemoved( const QString &directory );
+            QGuardedPtr<ScriptManager::Selector> selector;
+            KJSEmbed::KJSEmbedPart* m_kjs;
+            QStringList m_list;
+    };
 
-    private slots:
-        void slotAddDirectory();
-        void slotRemoveDirectory();
-
-    private:
-        QStringList m_dirList;
-        ScriptManagerBase *m_base;
-        Result m_result;
-};
+} //namespace ScriptManager
 
 
 #endif /* AMAROK_SCRIPTMANAGER_H */
