@@ -242,6 +242,8 @@ void PlaylistWindow::createGUI()
 
         if( it == last )
         {
+            m_toolbar->setIconText( KToolBar::TextOnly, false ); //Menu button has no icon, at least for now
+            
             //if the user has no PlayerWindow, he MUST have the menu action plugged
             //NOTE this is not saved to the local XMLFile, which is what the user will want
             if( !AmarokConfig::showPlayerWindow() && !button )
