@@ -94,7 +94,6 @@ XineEngine::init( bool&, int, bool )
     if (!m_xine)
     {
         KMessageBox::error( 0, i18n("amaroK could not initialise xine.") );
-        return false;
     }
 
     //xine_engine_set_param( m_xine, XINE_ENGINE_PARAM_VERBOSITY, 99 );
@@ -113,14 +112,12 @@ XineEngine::init( bool&, int, bool )
     if( !m_audioPort )
     {
         KMessageBox::error( 0, i18n("xine was unable to initialize any audio-drivers.") );
-        return false;
     }
 
     m_stream  = xine_stream_new( m_xine, m_audioPort, 0 );
     if( !m_stream )
     {
         KMessageBox::error( 0, i18n("amaroK could not create a new xine-stream.") );
-        return false;
     }
 
     //less buffering, faster seeking.. TODO test
@@ -161,9 +158,6 @@ XineEngine::init( bool&, int, bool )
     QTimer *timer = new QTimer( this );
     connect( timer, SIGNAL(timeout()), SLOT(pruneScopeBuffers()) );
     timer->start( 200 );
-
-
-    return true;
 }
 
 void
