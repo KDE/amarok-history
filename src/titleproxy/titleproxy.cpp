@@ -129,7 +129,10 @@ void Proxy::connectToHost() //SLOT
         connect( &m_sockRemote, SIGNAL( connectionClosed() ), this, SLOT( connectError() ) );
         QTimer::singleShot( TIMEOUT, this, SLOT( connectError() ) );
 
-        m_sockRemote.connectToHost( m_url.host(), m_url.port() );
+        int port = m_url.port();
+        if ( port == 0 && m_url.protocol() == "http" ) port = 80;
+
+        m_sockRemote.connectToHost( m_url.host(), port );
     }
 
     kdDebug() << "END " << k_funcinfo << endl;
