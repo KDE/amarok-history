@@ -36,10 +36,16 @@ namespace ScriptManager
         signals:
             void signalDirectoryAdded( const QString &directory );
             void signalDirectoryRemoved( const QString &directory );
-
+            void signalRunScript( const QString &script );
+            void signalStopScript( const QString &script );
+            void signalConfigureScript( const QString &script );
+            
         private slots:
             void slotAddDirectory();
             void slotRemoveDirectory();
+            void slotRunScript();
+            void slotStopScript();
+            void slotConfigureScript();
 
         private:
             QStringList m_dirList;

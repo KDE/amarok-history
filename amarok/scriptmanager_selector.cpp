@@ -12,10 +12,10 @@
 #include "scriptmanagerbase.h"
 #include "scriptmanager_selector.h"
 
+
 ////////////////////////////////////////////////////////////////////////////////
 // public interface
 ////////////////////////////////////////////////////////////////////////////////
-
 
 ScriptManager::Selector::Selector( const QStringList &directories, QWidget *parent, const char *name )
         : KDialogBase( parent, name, true, i18n( "Script List" ), Ok | Cancel, Ok, true )
@@ -29,6 +29,12 @@ ScriptManager::Selector::Selector( const QStringList &directories, QWidget *pare
              SLOT( slotAddDirectory() ) );
     connect( m_base->removeDirectoryButton, SIGNAL( clicked() ),
              SLOT( slotRemoveDirectory() ) );
+    connect( m_base->runButton, SIGNAL( clicked() ),
+             SLOT( slotRunScript() ) );
+    connect( m_base->stopButton, SIGNAL( clicked() ),
+             SLOT( slotStopScript() ) );
+    connect( m_base->configureScriptButton, SIGNAL( clicked() ),
+             SLOT( slotConfigureScript() ) );
 
     QStringList::ConstIterator it = directories.begin();
     for ( ; it != directories.end(); ++it )
@@ -47,11 +53,6 @@ ScriptManager::Selector::~Selector()
 {}
 
 
-////////////////////////////////////////////////////////////////////////////////
-// private interface
-////////////////////////////////////////////////////////////////////////////////
-
-
 ScriptManager::Selector::Result
 ScriptManager::Selector::exec()
 {
@@ -60,6 +61,10 @@ ScriptManager::Selector::exec()
     return m_result;
 }
 
+
+////////////////////////////////////////////////////////////////////////////////
+// private interface
+////////////////////////////////////////////////////////////////////////////////
 
 void
 ScriptManager::Selector::slotAddDirectory()
@@ -87,6 +92,36 @@ ScriptManager::Selector::slotRemoveDirectory()
     m_dirList.remove( dir );
     m_result.removedDirs.append( dir );
     delete m_base->directoryListView->selectedItem();
+}
+
+
+void
+ScriptManager::Selector::slotRunScript()
+{
+    if ( !m_base->directoryListView->selectedItem() )
+        return ;
+
+   emit signalRunScript( m_base->directoryListView->selectedItem()->text( 0 ) );
+}
+
+
+void
+ScriptManager::Selector::slotStopScript()
+{
+    if ( !m_base->directoryListView->selectedItem() )
+        return ;
+
+   emit signalStopScript( m_base->directoryListView->selectedItem()->text( 0 ) );
+}
+
+
+void
+ScriptManager::Selector::slotConfigureScript()
+{
+    if ( !m_base->directoryListView->selectedItem() )
+        return ;
+
+   emit signalConfigureScript( m_base->directoryListView->selectedItem()->text( 0 ) );
 }
 
 

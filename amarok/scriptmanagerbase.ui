@@ -1,4 +1,4 @@
-<!DOCTYPE UI><UI version="3.2" stdsetdef="1">
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
 <class>ScriptManagerBase</class>
 <widget class="QWidget">
     <property name="name">
@@ -8,8 +8,8 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>420</width>
-            <height>233</height>
+            <width>515</width>
+            <height>222</height>
         </rect>
     </property>
     <property name="caption">
@@ -48,7 +48,7 @@
                         <cstring>addDirectoryButton</cstring>
                     </property>
                     <property name="text">
-                        <string>Add Script...</string>
+                        <string>Add...</string>
                     </property>
                 </widget>
                 <widget class="KPushButton">
@@ -56,7 +56,31 @@
                         <cstring>removeDirectoryButton</cstring>
                     </property>
                     <property name="text">
-                        <string>Remove Script</string>
+                        <string>Remove</string>
+                    </property>
+                </widget>
+                <widget class="KPushButton">
+                    <property name="name">
+                        <cstring>runButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Run</string>
+                    </property>
+                </widget>
+                <widget class="KPushButton">
+                    <property name="name">
+                        <cstring>stopButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Stop</string>
+                    </property>
+                </widget>
+                <widget class="KPushButton">
+                    <property name="name">
+                        <cstring>configureScriptButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Configure...</string>
                     </property>
                 </widget>
                 <widget class="QLabel">
@@ -64,7 +88,7 @@
                         <cstring>informationLabel</cstring>
                     </property>
                     <property name="text">
-                        <string>These scripts are currently running.</string>
+                        <string>These scripts are currently known to amaroK.</string>
                     </property>
                     <property name="alignment">
                         <set>WordBreak|AlignVCenter</set>

@@ -21,13 +21,21 @@ namespace ScriptManager
     {
             Q_OBJECT
 
+        signals:
+            void configure( const QString& );    
+            
         public:
             Manager( QObject* );
-            ~ Manager();
+            ~Manager();
 
             static void showSelector();
             void addObject( QObject* object );
-
+            
+        private slots:
+            void slotRun( const QString& );             
+            void slotStop( const QString& );             
+            void slotConfigure( const QString& );             
+            
         private:
             static Manager* self;
 
