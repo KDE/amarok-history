@@ -102,6 +102,7 @@ PlayerApp::PlayerApp()
 
     m_scripter = new ScriptManager::Manager( this );
     m_scripter->addObject( this );
+    m_scripter->addObject( m_pDcopHandler );
     
     applySettings();  //will load the engine
 

@@ -6,7 +6,6 @@
 ScriptManager.connect( ScriptManager, "stop(const QString&)", this, "slotStop" );
 ScriptManager.connect( ScriptManager, "configure(const QString&)", this, "slotConfigure" );
 
-var dcop = amarok.child( "DcopHandler" );
 // Load the demo gui
 var gui = Factory.loadui( "setup.ui" );
 
@@ -33,6 +32,6 @@ function slotConfigure( name )
 function slotPlay( name )
 {
     print( "slotPlay()\n" );
-    dcop.play();
+    DcopHandler.play();
 }
 
