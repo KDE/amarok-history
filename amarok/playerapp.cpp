@@ -42,6 +42,8 @@ email                : markey@web.de
 #include <kconfigdialog.h>
 #include <kdebug.h>
 #include <kglobalaccel.h>
+#include <kjsembed/jsconsolewidget.h>
+#include <kjsembed/kjsembedpart.h>
 #include <kkeydialog.h>          //slotConfigShortcuts()
 #include <klocale.h>
 #include <kmessagebox.h>         //applySettings()
@@ -63,7 +65,7 @@ email                : markey@web.de
 #include <sys/socket.h>          //initIpc()
 #include <sys/un.h>              //initIpc()
 
-
+using namespace KJSEmbed;
 
 PlayerApp::PlayerApp()
         : KApplication()
@@ -102,6 +104,15 @@ PlayerApp::PlayerApp()
     EngineController::instance()->attach( this );
     m_pTray = new amaroK::TrayIcon( m_pPlayerWidget, actionCollection() ); //shown/hidden in applySettings()
 
+    // <KJSEmbed>
+        KJSEmbedPart* js = new KJSEmbedPart( this );
+        js->addObject( this );
+        js->addObject( m_pBrowserWin );
+        js->addObject( m_pPlayerWidget );
+        JSConsoleWidget* console = js->view();
+        console->show();
+    // </KJSEmbed>
+    
     applySettings();  //will load the engine
 
     //restore session as long as the user isn't asking for stuff to be inserted into the playlist etc.

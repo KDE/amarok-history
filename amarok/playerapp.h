@@ -22,12 +22,12 @@
     #include <config.h>
 #endif
 
-#include "engineobserver.h" //baseclass
+#include "engineobserver.h"        //baseclass
 #include <kapplication.h>          //baseclass
 #include <kurl.h>                  //needed for KURL::List (nested)
 #include <qserversocket.h>         //baseclass
 
-#define APP_VERSION "1.0-CVS"
+#define APP_VERSION "1.1-CVS"
 
 
 namespace amaroK
