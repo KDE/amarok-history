@@ -268,7 +268,7 @@ void ContextBrowser::openURLRequest( const KURL &url )
     if ( url.protocol() == "musicbrainz" )
     {
         const QString url = "http://www.musicbrainz.org/taglookup.html?artist=%1&album=%2&track=%3";
-        kapp->invokeBrowser( url.arg( KURL::encode_string_no_slash( artist, 106 /*utf-8*/ ), 
+        kapp->invokeBrowser( url.arg( KURL::encode_string_no_slash( artist, 106 /*utf-8*/ ),
 	    KURL::encode_string_no_slash( album, 106 /*utf-8*/ ),
 	    KURL::encode_string_no_slash( track, 106 /*utf-8*/ ) ) );
     }
@@ -334,6 +334,7 @@ void ContextBrowser::engineNewMetaData( const MetaBundle& bundle, bool /*trackCh
     bool newMetaData = false;
     m_dirtyHomePage = true;
     m_dirtyCurrentTrackPage = true;
+    m_dirtyLyricsPage = true;
 
     // Prepend stream metadata history item to list
     if ( !m_metadataHistory.first().contains( bundle.prettyTitle() ) )
