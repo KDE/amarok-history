@@ -17,7 +17,7 @@ public:
     XineEngine();
     ~XineEngine();
 
-    bool init( bool&, int, bool );
+    void init( bool&, int, bool );
 
     bool initMixer( bool );
     bool canDecode( const KURL&, mode_t, mode_t );
@@ -27,7 +27,7 @@ public:
 
     EngineBase::EngineState state() const;
 
-    void  play( const KURL &url, bool );
+    void  play( const KURL &url );
     void  play();
     void  stop();
     void  pause();
@@ -35,7 +35,8 @@ public:
     void  seek( long );
     void  setVolume( int );
 
-    StreamingMode streamingMode() { return NoStreaming; }
+    virtual StreamingMode streamingMode() { return NoStreaming; }
+    virtual bool isStream() const { return !m_url.isLocalFile(); }
 
 private slots:
     void pruneScopeBuffers();

@@ -83,7 +83,7 @@ XineEngine::~XineEngine()
     debug() << "xine closed\n";
 }
 
-bool
+void
 XineEngine::init( bool&, int, bool )
 {
     debug() << "Welcome to xine-engine! 9 out of 10 cats prefer xine!\n"
@@ -167,7 +167,7 @@ XineEngine::init( bool&, int, bool )
 }
 
 void
-XineEngine::play( const KURL &url, bool )
+XineEngine::play( const KURL &url )
 {
     m_url = url;
 
@@ -229,7 +229,7 @@ XineEngine::state() const
     case XINE_STATUS_PLAY: return xine_get_param(m_stream, XINE_PARAM_SPEED) ? EngineBase::Playing : EngineBase::Paused;
     case XINE_STATUS_IDLE: return EngineBase::Empty;
     case XINE_STATUS_STOP:
-    default:               return m_url.isEmpty() ? Engine::Empty : Engine::Idle;
+    default:               return m_url.isEmpty() ? EngineBase::Empty : EngineBase::Idle;
     }
 }
 
@@ -258,9 +258,6 @@ XineEngine::scope()
 
             buf->vpts = myMetronom->got_audio_samples( myMetronom, buf->vpts, buf->num_frames );
             buf->stream = 0;
-
-            Log::buffSize += buf->num_frames;
-            Log::buffCount++;
         }
 
         if( buf->vpts < current_vpts  )
