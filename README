@@ -21,7 +21,7 @@ drop interface, that really makes playlist handling easy.
     * nice GUI, integrates into the KDE look, but with a unique touch
 
 
-This file was last updated with relevance to amaroK 1.0-beta1
+This file was last updated with relevance to amaroK 1.0.2
 
 
 --------------------------------------------------------------------------------
@@ -29,7 +29,7 @@ DEPENDENCIES
 ============
 
 required
-    * KDELIBS 3.2
+    * KDELibs 3.2
       http://www.kde.org
 
     * TagLib 1.0
@@ -44,6 +44,9 @@ recommended
 optional
     * GStreamer-0.8.1 + Gst-Plugins-0.8.1
       http://gstreamer.net
+    
+    * xine 1.0-rc4
+      http://xine.sourceforge.net
 
     * NMM 0.4.4
       http://www.networkmultimedia.org
@@ -74,36 +77,19 @@ compile failure. See the file INSTALL for more information.
 
 
                 % ./configure --enable-final --prefix=`kde-config --prefix`
+                
+                
+In order to compile the xine-engine with amaroK 1.0.2 you must:
 
+                
+                % ./configure --with-xine
 
 --------------------------------------------------------------------------------
 MINI-FAQ
 ========
 
-Q: Why can't amaroK play MP3s?
-A: It can! Chances are you're using Fedora/RedHat linux, they don't ship with
-   MP3 decoders by default (due to patenting issues). Solution:
-
-       ALT-F2, gg:redhat mp3 kde, ENTER
-
-Q: The sound stutters/CPU usage is high, can it be improved?
-A: You can either use the GStreamer engine (it's great!), or tweak aRts. Open
-   the Control Center, go to "Sound and Multimedia", then "Sound System". Enable
-   "Run with highest possible priority", and increase the size of the sound
-   buffer (warning, see the next FAQ!) You should also enusre that your
-   artswrapper is suid:
-
-       $ su
-       $ chmod a+rsx /path/to/kde/bin/artswrapper
-
-   Finally you will benefit from installing kdemultimedia in its entirety to get
-   the faster aRts codecs (eg. libarts_mpeglib.so, etc.)
-
-Q: The amaroK analyzers are really unresponsive!
-A: You are probably using the aRts engine, either use the GST or NMM engines, or
-   reduce the size of your aRts buffer in the Control Center, sound system. The
-   lower the buffer the more responsive the visuals. Yes this is a bug! Please
-   help us fix it!
+There is a more thorough FAQ available at http://amarok.kde.org, this FAQ only
+deals with installation issues.
 
 Q: I have the required version of GStreamer installed but configure doesn't
    find it!
@@ -116,34 +102,18 @@ A: Here's an extract from the PKG-CONFIG man page:
      directories specified by the PKG_CONFIG_PATH environment variable.
      
    So, do export PKG_CONFIG_PATH="/path/to/gstreamer-0.x.y.pc" and reconfigure.
-   
-Q: Can amaroK output directly to OSS/ALSA?
-A: Yes, but not yet. One reason we use aRts/GStreamer and NMM is for codecs.
-   To output directly to ALSA, etc. someone needs to write an amaroK engine
-   plugin that uses libmad and libvorbis to decode directly to alsa. And then
-   call it amaroK_ALSA_engine. :-)
 
-Q: There are no visualizations in the visualizations dialog.
-A: You probably don't have xmms-config installed, reconfigure and build after
-   installing the appropriate xmms-devel package.
+Q: My configure went ok and it installed but amaroK says it cannot find any
+   sound plugins.
+A: Try:
 
-Q: I've found a bug / I've got a great idea for amaroK!
-A: Please report it at http://bugs.kde.org.
+     export KDEDIR=`kde-config --prefix` && amarok
 
-Q: Can I improve amaroK's startup time?
-A: The aRts engine is the slowest to load, using an alternative will help.
-   Prelinking amaroK has spectacular results; however if you have binary openGL
-   drivers (eg Nvidia drivers), you will need to compile amaroK --without-opengl
-   in order to get the amarokapp binary to prelink (the amarok binary is not
-   important here).
+   if you get the same message-box then see if you get any output from:
 
-Q: Do you accept patches!
-A: Happily! Your best course of action is to let us know what you plan to do
-   before you do any work so we can discuss it, but don't fret we haven't turned
-   down a patch yet! Discussion is mostly to help you patch the correct bits of
-   amaroK. Then either submit a patch to the mailing list, or commit if you have
-   cvs access. However, please let us know before you commit new features to
-   cvs! If you have a bug fix then just commit, this is open source afterall:)
+     ktradertest amaroK/Plugin
+     
+   if not then amaroK is not installed properly. Try again!
 
 
 --------------------------------------------------------------------------------
