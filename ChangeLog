@@ -3,10 +3,15 @@ amaroK ChangeLog
 (C) 2002-2005 the amaroK authors.
 
 
+VERSION 1.2.4:
+  BUGFIXES:
+    * xine-engine was reporting bogus tracklengths for ogg vorbis. (BR 102547)
+
+
 VERSION 1.2.3:
   FEATURES:
     * Graphequalizer script can now enable and disable the equalizer.
-    * New DCOP call "player: equalizerEnabled" returns whether or not 
+    * New DCOP call "player: equalizerEnabled" returns whether or not
       the equalizer is enabled.
     * OSD notification for mute.
     * Mute global shortcut, Win+M.
