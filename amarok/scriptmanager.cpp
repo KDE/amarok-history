@@ -4,6 +4,7 @@
 
 #include "scriptmanager.h"
 
+#include <kdebug.h>
 #include <kjsembed/jsconsolewidget.h>
 #include <kjsembed/kjsembedpart.h>
 
@@ -16,6 +17,8 @@ using namespace KJSEmbed;
 ScriptManager::Manager::Manager( QObject* object )
         : QObject( object )
 {
+    self = this;
+    
     //KJSEmbed
     m_kjs = new KJSEmbedPart( this );
     JSConsoleWidget* console = m_kjs->view();
@@ -24,18 +27,23 @@ ScriptManager::Manager::Manager( QObject* object )
 
 
 ScriptManager::Manager::~Manager()
-{
-    delete selector;
-}
+{}
 
 
 void
 ScriptManager::Manager::showSelector() //static
 {
-    if ( !self->selector ) {
-        self->selector = new Selector( self->m_list );
-        self->selector->show();
+    kdDebug() << "BEGIN " << k_funcinfo << endl;
+
+    Selector dia( self->m_list );
+    Selector::Result result = dia.exec();
+    
+    for ( int i = 0; i < result.dirs.count(); i++ ) {
+        kdDebug() << "Running script: " << result.dirs[i] << endl;
+        self->m_kjs->runFile( result.dirs[i] );
     }
+    
+    kdDebug() << "END " << k_funcinfo << endl;  
 }
 
 
@@ -51,7 +59,7 @@ ScriptManager::Manager::addObject( QObject* object )
 ////////////////////////////////////////////////////////////////////////////////
 
 ScriptManager::Manager*
-ScriptManager::Manager::self = 0;
+ScriptManager::Manager::self;
 
    
 #include "scriptmanager.moc"

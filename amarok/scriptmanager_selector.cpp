@@ -22,10 +22,7 @@ ScriptManager::Selector::Selector( const QStringList &directories, QWidget *pare
         , m_dirList( directories )
 {
     m_base = new ScriptManagerBase( this );
-    setWFlags( Qt::WDestructiveClose );
-
     setMainWidget( m_base );
-
     m_base->directoryListView->setFullWidth( true );
 
     connect( m_base->addDirectoryButton, SIGNAL( clicked() ),
@@ -67,7 +64,10 @@ ScriptManager::Selector::exec()
 void
 ScriptManager::Selector::slotAddDirectory()
 {
-    QString dir = KFileDialog::getExistingDirectory();
+    KFileDialog dia( QString::null, "*.js|JavaScript Source Files", 0, 0, true );
+    dia.setMode( KFile::File | KFile::ExistingOnly );
+    dia.exec();
+    QString dir = dia.selectedURL().path();
 
     if ( !dir.isEmpty() && m_dirList.find( dir ) == m_dirList.end() ) {
         m_dirList.append( dir );

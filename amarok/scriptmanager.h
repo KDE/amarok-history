@@ -6,7 +6,6 @@
 
 #include "scriptmanager_selector.h"
 
-#include <qguardedptr.h>
 #include <qobject.h>        //baseclass
 #include <qstringlist.h>    //stack allocated
 
@@ -32,7 +31,6 @@ namespace ScriptManager
         private:
             static Manager* self;
 
-            QGuardedPtr<ScriptManager::Selector> selector;
             KJSEmbed::KJSEmbedPart* m_kjs;
             QStringList m_list;
     };
