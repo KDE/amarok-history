@@ -355,10 +355,6 @@ GstEngine::position() const
 uint
 GstEngine::length() const
 {
-    return 0;
-
-// NOTE Deactivated for now, as some users were getting bogus tracklengths
-#if 0
     DEBUG_BLOCK
 
     if ( !m_currentInput ) return 0;
@@ -369,7 +365,6 @@ GstEngine::length() const
     gst_element_query( m_currentInput->decodebin, GST_QUERY_TOTAL, &fmt, &value );
 
     return static_cast<uint>( ( value / GST_MSECOND ) ); // nanosec -> msec
-#endif
 }
 
 
