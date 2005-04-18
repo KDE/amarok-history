@@ -240,13 +240,9 @@ gst_streamsrc_get ( GstPad* pad )
         gst_element_set_eos( GST_ELEMENT( src ) );
         return GST_DATA( gst_event_new( GST_EVENT_EOS ) );
     }
-    // When buffering, return empty buffer if buffer index is below minimum level
-    else if ( *src->m_buffering && *src->m_bufIndex < (int) src->buffer_min ) {
-        GstBuffer* const buf = gst_buffer_new_and_alloc( 0 );
-        GST_BUFFER_OFFSET( buf )     = src->curoffset;
-        GST_BUFFER_OFFSET_END( buf ) = src->curoffset;
-        return GST_DATA( buf );
-    }
+    // When buffering and buffer index is below minimum level, return filler event (dummy)
+    else if ( *src->m_buffering && *src->m_bufIndex < (int) src->buffer_min )
+        return GST_DATA( gst_event_new( GST_EVENT_FILLER ) );
 
     *src->m_buffering = *src->m_bufIndex ? false : true;
     const int readBytes = MIN( *src->m_bufIndex, src->blocksize );
