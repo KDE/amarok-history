@@ -49,7 +49,6 @@ class PlaylistWindow : public QWidget, public KXMLGUIClient
         static PlaylistWindow *self() { return s_instance; }
 
     public slots:
-        void queueSelected();
         void showHide();
 
     private slots:

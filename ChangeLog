@@ -5,7 +5,7 @@ amaroK ChangeLog
 
 VERSION 1.2.4:
   FEATURES:
-    * Queue selected tracks shortcut, Win+Q. (BR 83675)
+    * Queue selected tracks shortcut, Ctrl+D. (BR 83675)
 
   BUGFIXES:
     * Application freezes when switching shoutcast streams. (BR 103890)

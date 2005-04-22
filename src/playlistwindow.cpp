@@ -232,6 +232,7 @@ PlaylistWindow::init()
     //this one has no real context with regard to the menu
     //actionCollection()->action("playlist_copy")->plug( playlistMenu );
     playlistMenu->insertSeparator();
+    actionCollection()->action("queue_selected")->plug( playlistMenu );
     actionCollection()->action("playlist_remove_duplicates")->plug( playlistMenu );
     actionCollection()->action("playlist_select_all")->plug( playlistMenu );
     //END Playlist menu
@@ -595,11 +596,6 @@ void PlaylistWindow::playAudioCD() //SLOT
     m_browsers->showBrowser( "FileBrowser" );
     FileBrowser *fb = static_cast<FileBrowser *>( m_browsers->browser("FileBrowser") );
     fb->setUrl( KURL("audiocd:/") );
-}
-
-void PlaylistWindow::queueSelected()
-{
-    Playlist::instance()->queueSelected();
 }
 
 void PlaylistWindow::showScriptSelector() //SLOT
