@@ -576,6 +576,13 @@ Playlist::queue( QListViewItem *item )
 }
 
 void
+Playlist::queueSelected()
+{
+    for( MyIt it( this, MyIt::Selected ); *it; ++it )
+        queue( *it );
+}
+
+void
 Playlist::activate( QListViewItem *item )
 {
     ///item will be played if possible, the playback may be delayed

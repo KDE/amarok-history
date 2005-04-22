@@ -4,6 +4,9 @@ amaroK ChangeLog
 
 
 VERSION 1.2.4:
+  FEATURES:
+    * Queue selected tracks shortcut, Win+Q. (BR 83675)
+
   BUGFIXES:
     * Application freezes when switching shoutcast streams. (BR 103890)
     * MusicBrainz lookup was not escaping quote characters. (BR 103740)
