@@ -8,6 +8,8 @@ VERSION 1.2.4:
     * Queue selected tracks shortcut, Ctrl+D. (BR 83675)
 
   BUGFIXES:
+    * Updating the collection without any changes being made to it kept
+      the Update button disabled forever.
     * Application freezes when switching shoutcast streams. (BR 103890)
     * MusicBrainz lookup was not escaping quote characters. (BR 103740)
     * Fixed crash when clicking the "clear" button in CoverManager's filter
