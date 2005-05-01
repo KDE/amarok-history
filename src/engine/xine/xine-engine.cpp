@@ -309,10 +309,9 @@ XineEngine::position() const
 uint
 XineEngine::length() const
 {
-    return 0;
+    if( m_url.fileName().endsWith( ".ogg", false ) )
+        return 0;
 
-// NOTE Deactivated because xine returns bogus values for ogg vorbis
-#if 0
     int pos;
     int time;
     int length = 0;
@@ -320,7 +319,6 @@ XineEngine::length() const
     xine_get_pos_length( m_stream, &pos, &time, &length );
 
     return length;
-#endif
 }
 
 void
