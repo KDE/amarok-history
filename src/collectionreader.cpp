@@ -218,6 +218,7 @@ CollectionReader::readDir( const QString& dir, QStrList& entries )
 
     for( dirent *ent; (ent = readdir( d )) && !isAborted(); ) {
         QCString entry (ent->d_name);
+        QCString entryname (ent->d_name);
 
         if ( entry == "." || entry == ".." )
             continue;
@@ -231,7 +232,7 @@ CollectionReader::readDir( const QString& dir, QStrList& entries )
         if ( ! ( S_ISDIR( statBuf.st_mode ) || S_ISREG( statBuf.st_mode ) ) )
             continue;
 
-        if ( S_ISDIR( statBuf.st_mode ) && m_recursively && entry.length() && entry[0] != '.' )
+        if ( S_ISDIR( statBuf.st_mode ) && m_recursively && entry.length() && entryname[0] != '.' )
         {
             const QString file = QFile::decodeName( entry );
 

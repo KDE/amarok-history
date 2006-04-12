@@ -8,6 +8,7 @@ VERSION 1.3.9:
     * Support for libtunepimp 0.4. (BR 94988)
 
   BUGFIXES:
+    * Skip hidden directories while scanning the collection. (BR115478)
     * Fix leak of file descriptors with embedded cover art. Patch by Shane
       King <kde@dontletsstart.com>. (BR 123472)
     * Stop collection folders being automatically removed. Instead, allow
