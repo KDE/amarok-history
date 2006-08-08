@@ -1,6 +1,7 @@
 [Desktop Entry]
 Type=Service
 Name=aRts Engine
+Name[af]=aRts Enjin
 Name[bg]=Система aRts
 Name[bn]=আর্টস ইঞ্জিন
 Name[br]=Keflusker aRts
@@ -49,6 +50,7 @@ Name[zh_CN]=aRts 引擎
 Name[zh_TW]=aRts 解碼引擎
 X-KDE-Library=libamarok_artsengine_plugin
 Comment=Plugin for amaroK
+Comment[af]=Inprop module vir amaroK
 Comment[bg]=Приставка за amaroK
 Comment[bn]=আমারক-এর জন্য প্লাগিন
 Comment[br]=Lugent evit amaroK

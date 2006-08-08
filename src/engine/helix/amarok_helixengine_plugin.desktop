@@ -1,6 +1,7 @@
 [Desktop Entry]
 Type=Service
 Name=Helix Engine
+Name[af]=Helix Enjin
 Name[bg]=Ситема Helix
 Name[bn]=হেলিক্স ইঞ্জিন
 Name[br]=Keflusker Helix
@@ -46,6 +47,7 @@ Name[zh_CN]=Helix 引擎
 Name[zh_TW]=Helix 解碼引擎
 X-KDE-Library=libamarok_helixengine_plugin
 Comment=Plugin for amaroK
+Comment[af]=Inprop module vir amaroK
 Comment[bg]=Приставка за amaroK
 Comment[bn]=আমারক-এর জন্য প্লাগিন
 Comment[br]=Lugent evit amaroK

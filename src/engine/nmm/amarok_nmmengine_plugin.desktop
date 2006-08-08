@@ -1,6 +1,7 @@
 [Desktop Entry]
 Type=Service
 Name=NMM Engine
+Name[af]=NMM Enjin
 Name[bg]=Система NMM
 Name[bn]=এনএমএম ইঞ্জিন
 Name[br]=Keflusker NMM
@@ -49,6 +50,7 @@ Name[zh_CN]=NMM 引擎
 Name[zh_TW]=NMM 解碼引擎
 X-KDE-Library=libamarok_nmmengine_plugin
 Comment=amaroK plugin
+Comment[af]=amaroK inprop module
 Comment[bg]=Приставка за amaroK
 Comment[bn]=আমারক প্লাগিন
 Comment[br]=Lugent amaroK

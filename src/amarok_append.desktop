@@ -4,6 +4,7 @@ Actions=addToPlaylist;
 
 [Desktop Action addToPlaylist]
 Name=Add to amaroK Playlist
+Name[af]=Voeg by amaroK Speel lys
 Name[bg]=Добавяне към списъка на amaroK
 Name[br]=Ouzhpennañ d'ar roll tonioù amaroK
 Name[cs]=Přidat do seznamu skladeb amaroK
