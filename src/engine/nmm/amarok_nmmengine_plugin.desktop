@@ -98,6 +98,7 @@ Comment[tr]=amaroK eklentisi
 Comment[uk]=Втулок amaroK
 Comment[uz]=amaroK плагини
 Comment[zh_CN]=amaroK 插件
+Comment[zh_TW]=AmaroK 外掛程式
 ServiceTypes=amaroK/Plugin
 
 X-KDE-amaroK-plugintype=engine
