@@ -2,6 +2,7 @@
 Type=Service
 Name=xine Engine
 Name[af]=XINE Enjin
+Name[ar]=محرك xine
 Name[bg]=Система Xine
 Name[bn]=জাইন ইঞ্জিন
 Name[br]=Keflusker xine
@@ -52,6 +53,7 @@ Name[zh_TW]=xine 解碼引擎
 X-KDE-Library=libamarok_xine-engine
 Comment=Plugin for amaroK
 Comment[af]=Inprop module vir amaroK
+Comment[ar]=  قابس ( برنامج مضاف الى) AmaroK
 Comment[bg]=Приставка за amaroK
 Comment[bn]=আমারক-এর জন্য প্লাগিন
 Comment[br]=Lugent evit amaroK

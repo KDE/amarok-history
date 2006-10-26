@@ -2,6 +2,7 @@
 Type=Service
 Name=MAS Engine
 Name[af]=MAS Enjin
+Name[ar]=محرك MAS
 Name[bg]=Система MAS
 Name[bn]=এম-এ-এস ইঞ্জিন
 Name[br]=Keflusker MAS
@@ -50,6 +51,7 @@ Name[zh_CN]=MAS 引擎
 Name[zh_TW]=MAS 解碼引擎
 Comment=Plugin for amaroK
 Comment[af]=Inprop module vir amaroK
+Comment[ar]=  قابس ( برنامج مضاف الى) AmaroK
 Comment[bg]=Приставка за amaroK
 Comment[bn]=আমারক-এর জন্য প্লাগিন
 Comment[br]=Lugent evit amaroK

@@ -51,6 +51,7 @@ Name[zh_TW]=GStreamer 解碼引擎
 X-KDE-Library=libamarok_gstengine_plugin
 Comment=Plugin for amaroK
 Comment[af]=Inprop module vir amaroK
+Comment[ar]=  قابس ( برنامج مضاف الى) AmaroK
 Comment[bg]=Приставка за amaroK
 Comment[bn]=আমারক-এর জন্য প্লাগিন
 Comment[br]=Lugent evit amaroK

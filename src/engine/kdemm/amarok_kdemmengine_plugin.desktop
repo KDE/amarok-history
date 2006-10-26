@@ -2,6 +2,7 @@
 Type=Service
 Name=KDEMM Engine
 Name[af]=KDEMM Enjin
+Name[ar]=محرك KDEMM
 Name[bg]=Система KDEMM
 Name[bn]=কেডিই-এমএম ইঞ্জিন
 Name[br]=Keflusker KDEMM
@@ -50,6 +51,7 @@ Name[zh_CN]=KDEMM 引擎
 Name[zh_TW]=KDEMM 引擎
 Comment=Plugin for amaroK
 Comment[af]=Inprop module vir amaroK
+Comment[ar]=  قابس ( برنامج مضاف الى) AmaroK
 Comment[bg]=Приставка за amaroK
 Comment[bn]=আমারক-এর জন্য প্লাগিন
 Comment[br]=Lugent evit amaroK
