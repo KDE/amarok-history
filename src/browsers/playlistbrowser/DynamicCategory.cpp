@@ -203,6 +203,11 @@ DynamicCategory::On()
     m_repopulateButton->setEnabled( true );
     The::playlistActions()->playlistModeChanged();
 
+    //if the playlist is empty, repopulate while we are at it:
+
+    if ( The::playlistModel()->rowCount() == 0 )
+        The::playlistActions()->repopulateDynamicPlaylist();
+
 }
 
 void
