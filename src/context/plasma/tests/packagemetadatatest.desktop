@@ -2,6 +2,7 @@
 Name=Package metadata test file
 Name[bg]=Тестване на метаданните
 Name[ca]=Fitxer de proves de metadades de paquet
+Name[cs]=Testovací soubor metadat balíčku
 Name[da]=Testfil til pakke-metadata
 Name[de]=Paketmetadaten-Testdatei
 Name[el]=Δοκιμαστικό αρχείο μεταδεδομένων του πακέτου
@@ -39,6 +40,7 @@ Name[zh_TW]=套件中繼資料測試檔
 Comment=A test desktop file to test the PackageMetaData class.
 Comment[bg]=Тестване класа на метаданните.
 Comment[ca]=Un fitxer d'escriptori de proves per provar la classe PackageMetaData.
+Comment[cs]=Testovací soubor plochy pro otestování třídy PackageMetaData.
 Comment[da]=En test-desktopfil til test af PackageMetaData-klassen.
 Comment[de]=Eine Test-Desktop-Datei zum Testen der Klasse „PackageMetaData“.
 Comment[el]=Ένα δοκιμαστικό αρχείο desktop για τον έλεγχο τς κλάσης PackageMetaData.

@@ -50,6 +50,7 @@ Name[zh_TW]=Ampache 服務設定
 Comment=Sets up the ampache server(s) to connect to
 Comment[bg]=Настройване на ampache сървър/и
 Comment[ca]=Defineix el servidor(s) Ampache al que connectar
+Comment[cs]=Nastavit připojení k ampache serveru(ům)
 Comment[da]=Sætter de Ampache-servere op, der skal forbindes til
 Comment[de]=Richtet die Verbindungen zu Ampache-Servern ein
 Comment[el]=Ρυθμίζει τον εξυπηρετητή Ampache με τον οποίο θα γίνει σύνδεση
