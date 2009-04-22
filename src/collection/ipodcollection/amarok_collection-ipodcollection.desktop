@@ -1,6 +1,7 @@
 [Desktop Entry]
 Type=Service
 Name=Ipod Collection
+Name[af]=iPod versmeling
 Name[be]=Калекцыя Ipod
 Name[bg]=IPod колекция
 Name[ca]=Col·lecció ipod
@@ -42,6 +43,7 @@ Name[x-test]=xxIpod Collectionxx
 Name[zh_CN]=Ipod 收藏
 Name[zh_TW]=Ipod 收藏
 Comment=Ipod collection plugin for Amarok
+Comment[af]=iPod inprop module vir Amarok
 Comment[be]=Утулка калекцыі Ipod для Amarok
 Comment[bg]=Приставка за Ipod колекция (Amarok)
 Comment[ca]=Connector de col·leccions ipod per a l'Amarok

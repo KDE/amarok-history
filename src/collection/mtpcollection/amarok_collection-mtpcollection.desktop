@@ -1,6 +1,7 @@
 [Desktop Entry]
 Type=Service
 Name=MTP Collection
+Name[af]=MTP versameling
 Name[be]=Калекцыя MTP
 Name[bg]=MTP колекция
 Name[ca]=Col·lecció MTP
@@ -41,6 +42,7 @@ Name[x-test]=xxMTP Collectionxx
 Name[zh_CN]=MTP 收藏
 Name[zh_TW]=MTP 收藏
 Comment=MTP collection plugin for Amarok
+Comment[af]=MTP versameling inprop module vir Amarok
 Comment[be]=Утулка калекцыі MTP для Amarok
 Comment[bg]=Приставка за MTP колекция за Amarok
 Comment[ca]=Connector de col·leccions MTP per a l'Amarok

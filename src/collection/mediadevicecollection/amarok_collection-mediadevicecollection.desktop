@@ -1,6 +1,7 @@
 [Desktop Entry]
 Type=Service
 Name=Media Device Collection
+Name[af]=Media toestel versameling
 Name[be]=Калекцыя медыяпрылады
 Name[bg]=Колекция на медийните устройства
 Name[ca]=Col·lecció de dispositius de suports
@@ -42,6 +43,7 @@ Name[x-test]=xxMedia Device Collectionxx
 Name[zh_CN]=媒体设备收藏
 Name[zh_TW]=媒體裝置收藏
 Comment=Media Device collection plugin for Amarok
+Comment[af]=Media toestel inprop module vir Amarok
 Comment[be]=Утулка калекцыі медыяпрылады для Amarok
 Comment[bg]=Приставка за колекцията на медийните устройства (Amarok)
 Comment[ca]=Connector de col·leccions de dispositius de suports per a l'Amarok

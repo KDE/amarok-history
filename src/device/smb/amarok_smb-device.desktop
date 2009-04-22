@@ -1,6 +1,7 @@
 [Desktop Entry]
 Type=Service
 Name=SMB Device
+Name[af]=SMB Toestel
 Name[be]=Прылада SMB
 Name[bg]=SMB устройство
 Name[ca]=Dispositiu SMB
@@ -47,6 +48,7 @@ Name[x-test]=xxSMB Devicexx
 Name[zh_CN]=SMB 设备
 Name[zh_TW]=SMB 裝置
 Comment=Device plugin for Amarok which supports SMBFS
+Comment[af]=Toestel inprop module vir Amarok wat SMBFS ondersteuning bied
 Comment[bg]=Приставка за устройство за Amarok, поддържаща SMBFS
 Comment[ca]=Connector de dispositiu per a l'Amarok que accepta SMBFS
 Comment[cs]=Modul zařízení pro Amarok, které podporuje SMBFS

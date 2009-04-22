@@ -1,6 +1,7 @@
 [Desktop Entry]
 Type=Service
 Name=DAAP Collection
+Name[af]=DAAP versameling
 Name[be]=Калекцыя DAAP
 Name[bg]=DAAP колекция
 Name[ca]=Col·lecció DAAP
@@ -45,6 +46,7 @@ Name[x-test]=xxDAAP Collectionxx
 Name[zh_CN]=DAAP 收藏
 Name[zh_TW]=DAAP 收藏
 Comment=DAAP collection plugin for Amarok
+Comment[af]=DAAP inprop module vir Amarok
 Comment[be]=Утулка калекцыі DAAP для Amarok
 Comment[bg]=Приставка за DAAP колекция за Amarok
 Comment[ca]=Connector de col·leccions DAAP per a l'Amarok

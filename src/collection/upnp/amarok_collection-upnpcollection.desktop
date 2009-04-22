@@ -1,6 +1,7 @@
 [Desktop Entry]
 Type=Service
 Name=UPnP Collection
+Name[af]=UPnP versameling
 Name[be]=Калекцыя UPnP
 Name[bg]=UPnP колекция
 Name[ca]=Col·lecció UPnP
@@ -42,6 +43,7 @@ Name[x-test]=xxUPnP Collectionxx
 Name[zh_CN]=UPnP 收藏
 Name[zh_TW]=UPnP 收藏
 Comment=UPnP collection plugin for Amarok
+Comment[af]=UPnP versameling inprop module vir Amarok
 Comment[be]=Утулка калекцыі UPnP для Amarok
 Comment[bg]=Приставка за UPnP колекция (Amarok)
 Comment[ca]=Connector de col·leccions UPnP per a l'Amarok

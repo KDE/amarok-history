@@ -1,5 +1,6 @@
 [Desktop Entry]
 Name=Context
+Name[af]=Konteks
 Name[bg]=Контекст
 Name[cs]=Kontext
 Name[da]=Kontekst
@@ -38,6 +39,7 @@ Name[x-test]=xxContextxx
 Name[zh_CN]=上下文
 Name[zh_TW]=內容
 Comment=A containment for the Amarok Context
+Comment[af]='n Houer vir die Amarok konteks
 Comment[bg]=Контекст на Amarok
 Comment[ca]=Un contenidor per a l'Amarok Context
 Comment[da]=En beholder til Amarok-kontekst

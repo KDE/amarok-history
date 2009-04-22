@@ -14,6 +14,7 @@ X-KDE-Submenu[x-test]=xxAmarokxx
 
 [Desktop Action appendToPlaylist]
 Name=Append to Playlist
+Name[af]=Voeg agter aan speel lys by
 Name[be]=Дадаць у спіс прайгравання
 Name[bg]=Добавяне към списъка със записи
 Name[ca]=Afegeix a la llista de reproducció
@@ -64,6 +65,7 @@ Exec=amarok -e %U
 
 [Desktop Action appendAndPlay]
 Name=Append & Play
+Name[af]=Voeg agter aan by & Speel
 Name[be]=Дадаць і граць
 Name[bg]=Добавяне и изпълнение
 Name[ca]=Afegeix i reprodueix
@@ -114,6 +116,7 @@ Exec=qdbus org.kde.amarok /PlayerList playMedia %U
 
 [Desktop Action queueTrack]
 Name=Queue Track
+Name[af]=Plaas snit in wagtou
 Name[be]=Дадаць у чаргу
 Name[bg]=На опашката
 Name[ca]=Encua la peça
