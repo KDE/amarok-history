@@ -196,6 +196,8 @@ HelixEngine::init()
 
    if (HelixConfig::outputplugin() == "oss")
       setOutputSink( HelixSimplePlayer::OSS );
+   else if (HelixConfig::outputplugin() == "esd")
+      setOutputSink( HelixSimplePlayer::ESOUND );
    else
    {
       setOutputSink( HelixSimplePlayer::ALSA );

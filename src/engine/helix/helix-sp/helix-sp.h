@@ -32,6 +32,7 @@ using std::vector;
 
 #define MAX_PLAYERS 100 // that should do it...
 #define MAX_SCOPE_SAMPLES 5120
+#undef USE_HELIX_ALSA
 
 class HelixSimplePlayer;
 class CHXURL;
@@ -324,8 +325,8 @@ private:
    struct _snd_mixer*      m_pAlsaMixerHandle;
    struct _snd_mixer_elem* m_pAlsaMasterMixerElem;
    struct _snd_mixer_elem* m_pAlsaPCMMixerElem;
-#endif
    char *m_alsaDevice;
+#endif
    bool m_urlchanged;
    int m_volBefore;
    int m_volAtStart;

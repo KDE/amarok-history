@@ -153,12 +153,17 @@ HSPEngineContext::ReadPref(const char* pref_key, IHXBuffer*& buffer)
 
           if (m_splayer->getOutputSink() == HelixSimplePlayer::ALSA)
              strcpy((char *)outbuf, "3"); // set SoundDriver = kALSA (ie 3) for Alsa native support
+          else if (m_splayer->getOutputSink() == HelixSimplePlayer::ESOUND)
+             strcpy((char *)outbuf, "2"); // set SoundDriver = kESOUND (ie 2) for Enlightenment Sound Daemon
           else if (m_splayer->getOutputSink() == HelixSimplePlayer::OSS)
              strcpy((char *)outbuf, "0"); // set SoundDriver = kOSS (ie 0) for OSS
           buffer = ibuf;
 
-          if (m_splayer->getOutputSink() == HelixSimplePlayer::ALSA || m_splayer->getOutputSink() == HelixSimplePlayer::OSS)
-             m_splayer->print2stderr("Setting Sound System to %s\n", m_splayer->getOutputSink() == HelixSimplePlayer::ALSA ? "ALSA" : "OSS");
+          if (m_splayer->getOutputSink() == HelixSimplePlayer::ALSA || 
+              m_splayer->getOutputSink() == HelixSimplePlayer::ESOUND ||
+              m_splayer->getOutputSink() == HelixSimplePlayer::OSS)
+             m_splayer->print2stderr("Setting Sound System to %s\n", m_splayer->getOutputSink() == HelixSimplePlayer::ALSA ? 
+                                     "ALSA" : (m_splayer->getOutputSink() == HelixSimplePlayer::ESOUND ? "ESD" : "OSS") );
           else
              m_splayer->print2stderr("Setting Sound System to UNKNOWN: %d\n", m_splayer->getOutputSink());
        }

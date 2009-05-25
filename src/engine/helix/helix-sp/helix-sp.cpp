@@ -383,17 +383,21 @@ HelixSimplePlayer::HelixSimplePlayer() :
 #else
    m_direct(OSS),
 #endif
-   m_AlsaCapableCore(false),
+   m_AlsaCapableCore(true),
    m_nDevID(-1),
+#ifdef USE_HELIX_ALSA
    m_pAlsaMixerHandle(NULL),
    m_pAlsaMasterMixerElem(NULL),
    m_pAlsaPCMMixerElem(NULL),
    m_alsaDevice("default"),
+#endif
    m_urlchanged(0),
    m_volBefore(-1),
-   m_volAtStart(-1),
-   m_MvolBefore(-1),
+   m_volAtStart(-1)
+#ifdef USE_HELIX_ALSA
+   ,m_MvolBefore(-1),
    m_MvolAtStart(-1)
+#endif
 {
 
    pthread_mutexattr_t ma;
@@ -671,6 +675,12 @@ int HelixSimplePlayer::initDirectSS()
       m_direct = ALSA;
       openAudioDevice();
    }
+   else if (m_outputsink == ESOUND)
+   {
+      closeAudioDevice();
+      m_direct = ESOUND;
+      openAudioDevice();
+   }
    else
    {
       closeAudioDevice();
@@ -895,8 +905,10 @@ void HelixSimplePlayer::tearDown()
       delete ppctrl[i];
   }
 
+#ifdef USE_HELIX_ALSA
    if (pAudioDevice)
       pAudioDevice->Release();
+#endif
 
    if (pAudioDeviceResponse)
       pAudioDeviceResponse->Release();
@@ -997,10 +1009,13 @@ void HelixSimplePlayer::tearDown()
 
 void HelixSimplePlayer::setOutputSink( HelixSimplePlayer::AUDIOAPI out )
 {
-#ifdef USE_HELIX_ALSA
+#ifndef USE_HELIX_ALSA
    m_outputsink = out;
 #else
-   m_outputsink = OSS;
+   if (out == ALSA)
+      m_outputsink = OSS;
+   else
+      m_outputsink = out;
 #endif
 }
 
@@ -1148,6 +1163,9 @@ void HelixSimplePlayer::openAudioDevice()
       }
       break;
 
+      case ESOUND:
+         break;
+
       default:
          print2stderr("Unknown audio interface in openAudioDevice()\n");
    }
@@ -1205,6 +1223,9 @@ void HelixSimplePlayer::closeAudioDevice()
 #endif
       }
       break;
+
+      case ESOUND:
+         break;
 
       default:
          print2stderr("Unknown audio interface in closeAudioDevice()\n");
@@ -1347,7 +1368,9 @@ int HelixSimplePlayer::getDirectPCMVolume()
 
          if (m_nDevID < 0 || (::ioctl( m_nDevID, MIXER_READ(HX_VOLUME), &nVolume) < 0))
          {
+#ifdef USE_HELIX_ALSA
             print2stderr("ioctl fails when reading HW volume: mnDevID=%d, errno=%d\n", m_nDevID, errno);
+#endif
             nRetVolume = 50; // sensible default
          }
          else
@@ -1411,6 +1434,9 @@ int HelixSimplePlayer::getDirectPCMVolume()
 #endif
       }
       break;
+
+      case ESOUND:
+         break;
 
       default:
          print2stderr("Unknown audio interface in getDirectPCMVolume()\n");
@@ -1482,6 +1508,9 @@ void HelixSimplePlayer::setDirectPCMVolume(int vol)
       }
       break;
 
+      case ESOUND:
+         break;
+
       default:
          print2stderr("Unknown audio interface in setDirectPCMVolume()\n");
    }
@@ -1503,7 +1532,9 @@ int HelixSimplePlayer::setURL(const char *file, int playerIndex, bool islocal)
       if (len >= MAXPATHLEN)
          return -1;;
 
+#ifdef USE_HELIX_ALSA
       print2stderr("SETURL MASTER VOL: %d\n",getDirectMasterVolume());
+#endif
 
       if (ppctrl[playerIndex]->pszURL)
          delete [] ppctrl[playerIndex]->pszURL;
@@ -1699,7 +1730,9 @@ void HelixSimplePlayer::start(int playerIndex, bool fadein, unsigned long fadeti
       if (!ppctrl[playerIndex]->pszURL)
          return;
 
+#ifdef USE_HELIX_ALSA
       print2stderr("START MASTER VOL: %d\n",getDirectMasterVolume());
+#endif
 
       if (bEnableVerboseMode)
       {

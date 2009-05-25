@@ -117,6 +117,9 @@ HelixSoundDevice::HelixSoundDevice( QWidget *parent,
 #ifdef USE_HELIX_ALSA
    deviceComboBox->insertItem("alsa"); // and neither are the equivalents in gst (osssink and alsasink)
 #endif
+#ifdef USE_HELIX_ESD
+   deviceComboBox->insertItem("esd");
+#endif
    deviceComboBox->setCurrentItem(HelixConfig::outputplugin());
    QLabel* op = new QLabel( i18n("Output plugin:"), parent );
    op->setAlignment( QLabel::WordBreak | QLabel::AlignVCenter );
@@ -204,6 +207,8 @@ HelixSoundDevice::save()
       HelixConfig::setOutputplugin(deviceComboBox->currentText());
       if (deviceComboBox->currentText() == "oss")
          m_engine->setOutputSink(HelixSimplePlayer::OSS);
+      else if (deviceComboBox->currentText() == "esd")
+         m_engine->setOutputSink(HelixSimplePlayer::ESOUND);
       else
          m_engine->setOutputSink(HelixSimplePlayer::ALSA);
 
@@ -223,6 +228,7 @@ void HelixSoundDevice::setSoundSystem( int api )
    switch (api)
    {
       case HelixSimplePlayer::OSS:
+      case HelixSimplePlayer::ESOUND:
          deviceComboBox->setCurrentItem("oss");
          checkBox_outputDevice->setEnabled( false );
          lineEdit_outputDevice->setEnabled(false);
@@ -473,7 +479,7 @@ int HelixConfigDialog::setSoundSystem( int api )
    }
    else
    {
-      HelixConfig::setOutputplugin(api ? "alsa" : "oss");
+      HelixConfig::setOutputplugin(api ? "alsa" : ( api ? "esd" : "oss") );
       HelixConfig::writeConfig();
       return 1;
    }
