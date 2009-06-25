@@ -30,6 +30,7 @@
 #include "taglib_audiblefile.h"
 
 #include <netinet/in.h> // ntohl
+#include <stdio.h>
 
 using namespace TagLib;
 

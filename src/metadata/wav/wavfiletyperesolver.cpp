@@ -22,6 +22,7 @@
 #include "wavfiletyperesolver.h"
 #include "wavfile.h"
 
+#include <stdio.h>
 #include <string.h>
 
 TagLib::File *WavFileTypeResolver::createFile(const char *fileName,

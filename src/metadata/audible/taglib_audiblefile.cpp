@@ -26,6 +26,7 @@
 #include "taglib_audiblefile.h"
 
 #include "audibletag.h"
+#include <stdio.h>
 #include <taglib/tfile.h>
 #include <taglib/audioproperties.h>
 

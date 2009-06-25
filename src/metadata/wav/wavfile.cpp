@@ -29,6 +29,8 @@
 #include <taglib/audioproperties.h>
 #include <taglib/tag.h>
 
+#include <stdio.h>
+
 namespace TagLib {
 ////////////////////////////////////////////////////////////////////////////////
 // public members
