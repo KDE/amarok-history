@@ -23,6 +23,7 @@ class HelixSimplePlayerAudioStreamInfoResponse;
 #include <limits.h>
 #include <sys/param.h>
 #include <pthread.h>
+#include <string.h>
 #include <vector>
 #include <config.h>
 #include <iostream>

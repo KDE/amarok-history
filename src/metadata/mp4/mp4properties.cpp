@@ -30,6 +30,7 @@ email                : andrew.leadbetter@gmail.com
 #endif
 
 #include <stdint.h>
+#include <string.h>
 
 #ifndef UINT64_TO_DOUBLE
 #define UINT64_TO_DOUBLE(a) ((double)((int64_t)(a)))

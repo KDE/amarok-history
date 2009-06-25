@@ -24,6 +24,7 @@
 
 #include "taglib_mp4filetyperesolver.h"
 #include "mp4file.h"
+#include <string.h>
 
 TagLib::File *MP4FileTypeResolver::createFile(const char *fileName,
         bool readProperties,
